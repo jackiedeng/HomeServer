@@ -1,7 +1,7 @@
 /* eslint valid-jsdoc: "off" */
 
 'use strict';
-
+const path = require('path');
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -22,6 +22,15 @@ module.exports = appInfo => {
         listen: {
             port: 80
         }
+  };
+
+  config.static={
+    prefix:'/',
+    dir: path.join(appInfo.baseDir,'app/public'),
+    dynamic:true,
+    preload:false,
+    maxAge:0,
+    buffer:false    
   };
 
   // add your user config here
