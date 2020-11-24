@@ -13,11 +13,11 @@ class TemperatureSensor extends Controller {
 
     //get gpio port 4 data
 
-    rpio.open(4,rpio.INPUT);
+    // rpio.open(4,rpio.INPUT);
 
-    let data ="temperature:"+rpio.read(4);
+    // let data ="temperature:"+rpio.read(4);
 
-    ctx.body = JSON.stringify({});
+    ctx.body = JSON.stringify({"d":"1"});
         
   }
 }
