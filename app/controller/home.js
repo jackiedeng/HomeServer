@@ -11,7 +11,6 @@ class HomeController extends Controller {
     const data = fs.readFileSync(path.join(ctx.app.baseDir,'app/public/index.html'));
 
     ctx.body = data.toString();
-
   }
 }
 

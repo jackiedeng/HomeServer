@@ -9,6 +9,7 @@
   "dependencies": {
     "egg": "^2.15.1",
     "egg-scripts": "^2.11.0",
+    "log4js": "^6.3.0",
     "react": "^16.13.1",
     "rpio": "^2.2.0"
   },

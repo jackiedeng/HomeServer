@@ -173,23 +173,22 @@ function read_dht11(vals)
 
 class TemperatureSensor extends Controller {
   
-  
-
     async index() {
     
     const { ctx } = this;
 
-    //get gpio port 4 data
+    try{
+      if (read_dht11(v)) {
+      let result = "Temperature = "+v[2]+"."+v[3]+", Humidity = "+v[0]+"."+v[1];
+      }
 
-    rpio.open(4,rpio.INPUT);
+      let data ="temperature:"+rpio.read(4);
 
-    if (read_dht11(v)) {
-     let result = "Temperature = "+v[2]+"."+v[3]+", Humidity = "+v[0]+"."+v[1];
+      ctx.body = JSON.stringify({"d":data});
+
+    }catch(e){
+      ctx.logger.error("error:"+JSON.stringify(e));
     }
-
-    let data ="temperature:"+rpio.read(4);
-
-    ctx.body = JSON.stringify({"d":data});
   }
 }
 
