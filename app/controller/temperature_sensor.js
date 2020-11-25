@@ -177,19 +177,19 @@ class TemperatureSensor extends Controller {
     
     const { ctx } = this;
     ctx.logger.error("begin temperature read!!!");
-    
-    try{
-      if (read_dht11(v)) {
-      let result = "Temperature = "+v[2]+"."+v[3]+", Humidity = "+v[0]+"."+v[1];
-      }
+    ctx.body = JSON.stringify({"d":123});  
+  //   try{
+  //     if (read_dht11(v)) {
+  //     let result = "Temperature = "+v[2]+"."+v[3]+", Humidity = "+v[0]+"."+v[1];
+  //     }
 
-      let data ="temperature:"+rpio.read(4);
+  //     let data ="temperature:"+rpio.read(4);
 
-      ctx.body = JSON.stringify({"d":data});
+  //     ctx.body = JSON.stringify({"d":data});
 
-    }catch(e){
-      ctx.logger.error("error:"+JSON.stringify(e));
-    }
+  //   }catch(e){
+  //     ctx.logger.error("error:"+JSON.stringify(e));
+  //   }
   }
 }
 
