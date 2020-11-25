@@ -176,7 +176,8 @@ class TemperatureSensor extends Controller {
     async index() {
     
     const { ctx } = this;
-
+    ctx.logger.error("begin temperature read!!!");
+    
     try{
       if (read_dht11(v)) {
       let result = "Temperature = "+v[2]+"."+v[3]+", Humidity = "+v[0]+"."+v[1];
