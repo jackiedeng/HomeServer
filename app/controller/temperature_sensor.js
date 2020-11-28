@@ -18,6 +18,7 @@ function dbg()
 
 function read_dht11(vals)
 {
+  console.log("begin read dhtt");
   /*
   * Our read buffer of all the bits sent.  Should be plenty.  On a
   * Raspberry Pi 4 a successful read uses up about half of this.
@@ -177,21 +178,21 @@ class TemperatureSensor extends Controller {
     
     const { ctx } = this;
     // ctx.logger.error("begin temperature read!!!");
-    // ctx.body = JSON.stringify({"d":123});  
-    try{
-      
-      if (read_dht11(v)) {
-      let result = "Temperature = "+v[2]+"."+v[3]+", Humidity = "+v[0]+"."+v[1];
-      }
+    ctx.body = JSON.stringify({"d":123});  
+  //   try{
 
-      let data ="temperature:"+rpio.read(4);
+  //     if (read_dht11(v)) {
+  //     let result = "Temperature = "+v[2]+"."+v[3]+", Humidity = "+v[0]+"."+v[1];
+  //     }
 
-      ctx.body = JSON.stringify({"d":data});
+  //     let data ="temperature:"+rpio.read(4);
 
-    }catch(e){
-      ctx.logger.error("error:"+JSON.stringify(e));
-    }
-  }
+  //     ctx.body = JSON.stringify({"d":data});
+
+  //   }catch(e){
+  //     ctx.logger.error("error:"+JSON.stringify(e));
+  //   }
+  // }
 }
 
 module.exports = TemperatureSensor;
