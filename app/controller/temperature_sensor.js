@@ -192,7 +192,7 @@ class TemperatureSensor extends Controller {
   //   }catch(e){
   //     ctx.logger.error("error:"+JSON.stringify(e));
   //   }
-  // }
+  }
 }
 
 module.exports = TemperatureSensor;
