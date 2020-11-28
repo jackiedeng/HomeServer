@@ -181,6 +181,8 @@ class TemperatureSensor extends Controller {
     // ctx.body = JSON.stringify({"d":123});  
     try{
 
+      var v = Buffer(5);
+
       if (read_dht11(v)) {
       let result = "Temperature = "+v[2]+"."+v[3]+", Humidity = "+v[0]+"."+v[1];
       }
