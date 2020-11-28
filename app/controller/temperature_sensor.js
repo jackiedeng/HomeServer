@@ -20,7 +20,7 @@ class TemperatureSensor extends Controller {
 
       sensor.read(11, GPIOPort, function(err, temperature, humidity) {
         if (!err) {
-          ctx.logger.debug(`temp: ${temperature}°C, humidity: ${humidity}%`);
+          ctx.logger.error(`temp: ${temperature}°C, humidity: ${humidity}%`);
         }else{
           ctx.logger.error('error'+err);
         }
