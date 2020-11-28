@@ -14,7 +14,7 @@ class TemperatureSensor extends Controller {
     async index() {
     
     const { ctx } = this;
-    // ctx.logger.error("begin temperature read!!!");
+    ctx.logger.error("begin temperature read!!!");
     // ctx.body = JSON.stringify({"d":123});  
     try{
 
