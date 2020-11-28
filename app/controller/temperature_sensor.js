@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const rpio = require('rpio');
 const sensor = require("node-dht-sensor");
+const { error } = require('console');
 //GPIO 4
 let GPIOPort = 4;
 
@@ -20,6 +21,8 @@ class TemperatureSensor extends Controller {
       sensor.read(11, GPIOPort, function(err, temperature, humidity) {
         if (!err) {
           ctx.logger.debug(`temp: ${temperature}°C, humidity: ${humidity}%`);
+        }else{
+          ctx.logger.error('error'+err);
         }
       });
 
