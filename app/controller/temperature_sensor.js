@@ -7,7 +7,7 @@ const rpio = require('rpio');
 const sensor = require("node-dht-sensor");
 const { error } = require('console');
 //GPIO 4
-let GPIOPort = 7;
+let GPIOPort = 4;
 
 class TemperatureSensor extends Controller {
   
